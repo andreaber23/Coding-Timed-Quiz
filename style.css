@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+border-color: red;
+border-style: solid;
+}
+
+.main-section {
+    padding: 30px;
+    border-color: blue;
+    border-style: solid;
+}
+
+.top-timer-highscore p {
+    border-color: green;
+    border-style: solid;
+display: inline;
+float:right;
+}
+.content h1 {
+    text-align: center;
+    margin-top: 50px;
+    border-color: yellow;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+
+.content h3 {
+    font-size: 13px;
+    border-color: green;
+    box-sizing: border-box;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 10px;
+}
+.content button {
+    display: block;
+    width: 10%;
+    margin-left: 45%;
+}
