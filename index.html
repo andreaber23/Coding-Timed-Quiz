@@ -4,29 +4,48 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Coding Quiz</title>
+
         <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
+ 
         <section class="main-section">
             <section class="top-timer-highscore">
-                <button>View High Scores</button>
-                <p>Timer: 00:00</p>
+                <button id="highscore">View High Scores</button>
+                <p id="timer">Timer: 00:00</p>
             </section>
-            <section class="content">
-                <header>
+            <section >
+                <header class="content hide">
                     <h1> Coding Quiz Challenge</h1>
                     <h3>Try to answer the follwoing question code-related questions with the time limit. keep in mind that incorrect answers will penalize your score/time by ten seconds!</h3>
-                    <button>Start Quiz</button>
+                    <button id="start-button">Start Quiz</button>
 
                 </header>
-                <main class="instructions">
-                    <p> </p>
+                <main>
+                    <section id="questionsContainer" class="questions hide">
+                        <h2 id="showQuestion"></h2>
+                        <ul id="answers">
+                       </ul>
+                    </section>
+                    <section id="finished-section" class="finish hide">
+                        <h2>All done!</h2>
+                        <p>Final Score:</p>
+
+                        <label for="">Enter Initials:</label>
+                        <input type="text">
+                        <button id="submitForm">Submit</button>
+                    </section>
+                    <section class="final-score">
+                        <h2>High Scores</h2>
+                        
+                    </section>
                 </main>
             </section>
 
         </section>
-        
+        <script src="script.js"></script>
+
     </body>
 
 
