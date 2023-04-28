@@ -47,17 +47,19 @@ const questions = [
  var answers=document.getElementById("answers");
  var allDoneSection=document.getElementById("finished-section");
  var submitFormButton=document.getElementById("submitForm")
- var finalScore=document.getElementsByClassName("final-score")
+ var highScoresSection=document.getElementsByClassName("final-score")
+ var initialsInput=document.getElementById("initials");
 var secondsLeft=60
 var questionIndex=0
 var timeState;
+var content=document.getElementById("content")
 
 
 // Set up the event listener for the start button
  function startTimer(){
     timeState=setInterval(function(){
     secondsLeft=secondsLeft-1
-    timer.textContent="time left,"+ secondsLeft
+    timer.textContent="Time left:"+ secondsLeft
         if (secondsLeft<=0) {
             console.log("quiz is done")
             clearInterval(timeState)
@@ -65,14 +67,13 @@ var timeState;
     },1000)
  }
 
-
  function startQuiz() {
    // Hide the start button
    startButton.style.display = "none";
    startTimer();
-    questionsContainer.removeAttribute("class","hide");
-    //run display questions here
-
+    questionsContainer.classList.remove('hide');
+    document.querySelector('#header').classList.add('hide')
+    //run display questions here]
 questionDisplay()
 }
 
@@ -92,20 +93,24 @@ function checkAnswer (){
     if (this.value===questions[questionIndex].correct)
     { console.log("correct")
     } else {
-        console.log ("incorrect")
+        console.log ("incorrect");
+        secondsLeft -= 10;
     }
-questionIndex++
-answers.innerHTML ="";
-if (questionIndex===questions.length) {
+
+    questionIndex++
+    answers.innerHTML ="";
+    if (questionIndex===questions.length) {
     endQuiz()
-} else {questionDisplay()}
+    } else {questionDisplay()}
+
 
 }
 
 function endQuiz (){
-    showQuestion.setAttribute("class", "hide");
-    questionsContainer.setAttribute("class", "hide");
-    allDoneSection.removeAttribute("class", "hide");
+    showQuestion.classList.add("hide");
+    questionsContainer.classList.add("hide");
+    allDoneSection.classList.remove("hide");
+    clearInterval(timeState);
 }
 
 

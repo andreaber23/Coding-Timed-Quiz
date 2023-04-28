@@ -16,14 +16,14 @@
                 <p id="timer">Timer: 00:00</p>
             </section>
             <section >
-                <header class="content hide">
+                <header id="header" class="content">
                     <h1> Coding Quiz Challenge</h1>
                     <h3>Try to answer the follwoing question code-related questions with the time limit. keep in mind that incorrect answers will penalize your score/time by ten seconds!</h3>
                     <button id="start-button">Start Quiz</button>
 
                 </header>
                 <main>
-                    <section id="questionsContainer" class="questions hide">
+                    <section id="questionsContainer" class="questions">
                         <h2 id="showQuestion"></h2>
                         <ul id="answers">
                        </ul>
@@ -33,10 +33,10 @@
                         <p>Final Score:</p>
 
                         <label for="">Enter Initials:</label>
-                        <input type="text">
+                        <input type="text" id="initials">
                         <button id="submitForm">Submit</button>
                     </section>
-                    <section class="final-score">
+                    <section class="final-score hide">
                         <h2>High Scores</h2>
                         
                     </section>
