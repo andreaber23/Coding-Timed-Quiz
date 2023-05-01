@@ -16,6 +16,17 @@ The instructions message will show, so that the user can be aware of the penalty
 
 ## Web Application appearance and access
 
+First look at the quiz with the instructions
+
+<img width="1434" alt="Screen Shot 2023-04-28 at 3 04 32 PM" src="https://user-images.githubusercontent.com/128647787/235408272-a8df38e7-7425-4f03-94bf-591f4d513071.png">
+
+Questions displayed on the screen
+
+<img width="1414" alt="Screen Shot 2023-04-28 at 3 04 39 PM" src="https://user-images.githubusercontent.com/128647787/235408361-43aed4a0-8729-4a8d-9132-142293137918.png">
+
+User enters their initials
+
+<img width="1428" alt="Screen Shot 2023-04-28 at 3 04 51 PM" src="https://user-images.githubusercontent.com/128647787/235408446-1ecf26b0-ed3d-4448-8720-699bec10e1b5.png">
 
 
 ## Credits
