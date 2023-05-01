@@ -52,7 +52,9 @@ const questions = [
 var secondsLeft=60
 var questionIndex=0
 var timeState;
-var content=document.getElementById("content")
+var content=document.getElementById("content");
+var score=0
+var allScores=document.getElementById("highscore");
 
 
 // Set up the event listener for the start button
@@ -92,6 +94,7 @@ function questionDisplay() {
 function checkAnswer (){
     if (this.value===questions[questionIndex].correct)
     { console.log("correct")
+    score++;
     } else {
         console.log ("incorrect");
         secondsLeft -= 10;
@@ -111,17 +114,45 @@ function endQuiz (){
     questionsContainer.classList.add("hide");
     allDoneSection.classList.remove("hide");
     clearInterval(timeState);
+    highScoresSection.textContent = "Your score: " + score;
 }
 
 
 startButton.onclick=startQuiz
+submitFormButton.onclick = showFinalScores;
+allScores.onclick = showFinalScores;
 
-var initials = initialsInput.value.trim();
-    var finalScore = secondsLeft;
-    var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-    var newScore = { initials: initials, score: finalScore };
-    highScores.push(newScore);
-    localStorage.setItem("highScores", JSON.stringify(highScores));
+function showFinalScores() {
 
-    // Redirect to the final-score page
-    window.location.href = "final-score.html";
+    allDoneSection.classList.add("hide");
+    document.querySelector('#final-scores').classList.remove('hide')
+    
+  
+  
+
+  
+  var initials = initialsInput.value;
+  var score = secondsLeft;
+  document.getElementById("user-initials").textContent = initials;
+  document.getElementById("user-score").textContent = score;
+  var highScores = [];
+  var newScore = {
+    initials: initials,
+    score: score
+};
+
+highScores.push(newScore);
+
+localStorage.setItem("highScores", JSON.stringify(highScores));
+document.querySelector('#header').classList.add('hide')
+
+
+}
+
+
+function loadHighScores() {
+    var savedScores = localStorage.getItem("highScores");
+    if (savedScores) {
+        highScores = JSON.parse(savedScores);
+    }
+}
