@@ -115,3 +115,13 @@ function endQuiz (){
 
 
 startButton.onclick=startQuiz
+
+var initials = initialsInput.value.trim();
+    var finalScore = secondsLeft;
+    var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    var newScore = { initials: initials, score: finalScore };
+    highScores.push(newScore);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+
+    // Redirect to the final-score page
+    window.location.href = "final-score.html";
